@@ -4,6 +4,7 @@ module.exports = {
       // url: ["http://localhost:3000/"],
       // startServerCommand: "yarn start",
       staticDistDir: "./out",
+      url: ["http://localhost"],
     },
     upload: {
       target: "temporary-public-storage",
@@ -11,6 +12,20 @@ module.exports = {
     assert: {
       preset: "lighthouse:no-pwa",
       assertions: {
+        "first-contentful-paint": [
+          "warn",
+          {
+            maxNumericValue: 2500,
+            aggregationMethod: "optimistic",
+          },
+        ],
+        interactive: [
+          "warn",
+          {
+            maxNumericValue: 5000,
+            aggregationMethod: "optimistic",
+          },
+        ],
         "uses-long-cache-ttl": "off",
         "uses-http2": "off",
       },
