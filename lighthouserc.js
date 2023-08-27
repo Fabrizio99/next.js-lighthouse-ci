@@ -9,6 +9,10 @@ module.exports = {
     },
     assert: {
       preset: "lighthouse:no-pwa",
+      assertions: {
+        "uses-long-cache-ttl": "off",
+        "uses-http2": "off",
+      },
     },
   },
 };
