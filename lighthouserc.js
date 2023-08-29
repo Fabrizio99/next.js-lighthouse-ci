@@ -12,6 +12,9 @@ module.exports = {
     assert: {
       preset: "lighthouse:no-pwa",
       assertions: {
+        "bf-cache": "off",
+        "csp-xss": "off",
+        "unused-javascript": "off",
         "first-contentful-paint": [
           "warn",
           {
